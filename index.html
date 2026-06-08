@@ -193,6 +193,40 @@
   /* GRAY */
   .slide.gray{background:var(--bg2);}
   .slide.gray .card{background:var(--white);}
+
+  /* antes & depois */
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+  .ba-col{border-radius:18px;padding:1.6rem 1.7rem;}
+  .ba-antes{background:var(--bg2);border:1px solid var(--border);}
+  .ba-depois{background:var(--green-light);border:1px solid var(--green-mid);}
+  .ba-col h3{font-family:'Spline Sans Mono',monospace;font-size:.72rem;letter-spacing:.18em;
+    text-transform:uppercase;margin-bottom:1.1rem;}
+  .ba-antes h3{color:var(--muted);} .ba-depois h3{color:var(--green-dark);}
+  .ba-item{display:flex;gap:.7rem;padding:.6rem 0;font-size:.95rem;line-height:1.45;}
+  .ba-item span{flex:1;}
+  .ba-antes .ba-item{color:var(--muted);}
+  .ba-depois .ba-item{color:var(--ink);}
+  .ba-mark{flex-shrink:0;font-weight:800;}
+  .ba-antes .ba-mark{color:var(--gray-light);} .ba-depois .ba-mark{color:var(--green-dark);}
+
+  /* dúvidas (Q&A) */
+  .qa{display:flex;flex-direction:column;gap:.9rem;}
+  .qa-item{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.3rem;
+    box-shadow:0 1px 3px rgba(13,13,13,.03);}
+  .qa-q{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:1.05rem;color:var(--ink);margin-bottom:.4rem;}
+  .qa-a{color:var(--muted);font-size:.9rem;line-height:1.5;}
+  .qa-a b{color:var(--green-dark);}
+
+  /* compromissos */
+  .commit{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.12);color:var(--white);}
+  .commit:last-child{border-bottom:none;}
+  .commit .ck{width:26px;height:26px;border-radius:7px;background:var(--green-dark);color:var(--black);
+    display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:.9rem;}
+  .commit b{font-weight:800;color:var(--white);} .commit span{color:#b8bcb3;}
+
+  .visao-frase{font-family:'Fraunces',serif;font-weight:400;font-style:italic;
+    font-size:clamp(1.7rem,4vw,3.2rem);line-height:1.35;max-width:30ch;color:var(--white);}
+  .visao-frase b{font-style:normal;font-weight:900;color:var(--green);}
 </style>
 </head>
 <body>
@@ -321,7 +355,31 @@
     <div class="callout anim" style="margin-top:2rem;">A regra dos <b>80/20</b>: produzimos 80% no ciclo e guardamos 20% de folga para ajustes de momento — datas, lançamentos, oportunidades. Conteúdo não envelhece na gaveta.</div>
   </section>
 
-  <!-- 8 ANÚNCIO DO SOFTWARE -->
+  <!-- 8 ANTES E DEPOIS -->
+  <section class="slide">
+    <div class="kicker anim">O que muda na prática</div>
+    <h2 class="anim" style="font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:1.4rem;">O seu dia, antes e depois</h2>
+    <div class="ba">
+      <div class="ba-col ba-antes anim">
+        <h3>Como é hoje</h3>
+        <div class="ba-item"><span class="ba-mark">—</span><span>Na segunda, você ainda não sabe o que vai produzir na semana.</span></div>
+        <div class="ba-item"><span class="ba-mark">—</span><span>Cada peça vai e volta do cliente várias vezes.</span></div>
+        <div class="ba-item"><span class="ba-mark">—</span><span>Interrupções constantes quebram o foco.</span></div>
+        <div class="ba-item"><span class="ba-mark">—</span><span>O retrabalho aparece de surpresa, em cima da hora.</span></div>
+        <div class="ba-item"><span class="ba-mark">—</span><span>Difícil saber se o trabalho de todos está em dia.</span></div>
+      </div>
+      <div class="ba-col ba-depois anim">
+        <h3>Como será</h3>
+        <div class="ba-item"><span class="ba-mark">✓</span><span>Você abre o sistema e já vê os blocos do dia, prontos para fazer.</span></div>
+        <div class="ba-item"><span class="ba-mark">✓</span><span>Uma aprovação por ciclo — o vai-e-volta acaba.</span></div>
+        <div class="ba-item"><span class="ba-mark">✓</span><span>Produção concentrada, com foco de verdade.</span></div>
+        <div class="ba-item"><span class="ba-mark">✓</span><span>Tudo planejado com antecedência, sem susto.</span></div>
+        <div class="ba-item"><span class="ba-mark">✓</span><span>O progresso de cada um fica visível para o time.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 ANÚNCIO DO SOFTWARE -->
   <section class="slide announce dark" data-tema="dark" style="background:var(--black) radial-gradient(ellipse at 50% 42%,rgba(122,179,86,.18),transparent 62%);">
     <div class="badge anim">A peça que faltava</div>
     <h1 class="anim">Para isso, criaremos um <span class="em">software exclusivo.</span></h1>
@@ -388,7 +446,40 @@
     </div>
   </section>
 
-  <!-- 13 FECHAMENTO -->
+  <!-- 13 DÚVIDAS -->
+  <section class="slide gray" data-tema="gray">
+    <div class="kicker anim">Vamos combinar</div>
+    <h2 class="anim" style="font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:1.4rem;">Dúvidas que talvez você tenha</h2>
+    <div class="qa">
+      <div class="qa-item anim"><div class="qa-q">"Isso não vai dar mais trabalho?"</div><div class="qa-a">Pelo contrário. No começo é adaptação, mas o modelo <b>tira o retrabalho</b> e a correria semanal. Você produz concentrado e depois respira.</div></div>
+      <div class="qa-item anim"><div class="qa-q">"E se o cliente demorar a responder?"</div><div class="qa-a">Sem problema. O prazo só corre <b>quando ele responde</b> — ninguém é cobrado por um atraso que veio do cliente.</div></div>
+      <div class="qa-item anim"><div class="qa-q">"E se eu errar no sistema?"</div><div class="qa-a">Dá para desfazer e ajustar. O sistema é nosso, <b>feito para o nosso jeito</b> — vamos melhorá-lo juntos no caminho.</div></div>
+      <div class="qa-item anim"><div class="qa-q">"Vou perder minha autonomia?"</div><div class="qa-a">Não. Você ganha <b>clareza</b> do que fazer e liberdade para fazer bem feito, sem ninguém no seu pé o tempo todo.</div></div>
+    </div>
+  </section>
+
+  <!-- 14 VISÃO -->
+  <section class="slide dark" data-tema="dark" style="align-items:flex-start;justify-content:center;">
+    <div class="kicker anim">Por que estamos fazendo isso</div>
+    <p class="visao-frase anim">Para a MAM crescer <b>sem perder a qualidade</b> — e para o time trabalhar com <b>tranquilidade</b>, não com correria.</p>
+    <p class="anim" style="margin-top:1.8rem;color:#b8bcb3;font-size:clamp(1rem,1.6vw,1.2rem);line-height:1.6;max-width:54ch;">
+      Este modelo não é sobre fazer mais com menos. É sobre fazer melhor, com método — para atendermos clientes maiores, entregarmos com consistência e construirmos uma agência que dá orgulho de fazer parte.
+    </p>
+  </section>
+
+  <!-- 15 COMPROMISSOS -->
+  <section class="slide dark" data-tema="dark">
+    <div class="kicker anim">Para funcionar, conto com vocês</div>
+    <h2 class="anim" style="font-size:clamp(1.7rem,3.5vw,2.6rem);margin-bottom:1.4rem;color:#fff;">O compromisso de cada um</h2>
+    <div style="max-width:64ch;">
+      <div class="commit anim"><div class="ck">✓</div><div><b>Marcar o que foi feito, todo dia.</b> <span>— o sistema só funciona se cada um ticar seus blocos conforme conclui.</span></div></div>
+      <div class="commit anim"><div class="ck">✓</div><div><b>Respeitar a sequência das fases.</b> <span>— uma etapa libera a outra; pular fura o processo de todos.</span></div></div>
+      <div class="commit anim"><div class="ck">✓</div><div><b>Produzir com foco no bloco do dia.</b> <span>— a cota diária é o que mantém tudo no prazo sem sobrecarga.</span></div></div>
+      <div class="commit anim"><div class="ck">✓</div><div><b>Trazer melhorias.</b> <span>— o sistema é nosso; quem usa todo dia é quem melhor sabe como aperfeiçoá-lo.</span></div></div>
+    </div>
+  </section>
+
+  <!-- 16 FECHAMENTO -->
   <section class="slide cover dark" data-tema="dark">
     <div class="kicker anim">O próximo passo</div>
     <h1 class="anim" style="font-size:clamp(2.4rem,7vw,5.5rem);">Começamos<br>pelo <span class="em">Verkup.</span></h1>
